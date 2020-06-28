@@ -11,15 +11,15 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
 
 /**
  *
  * @author Wei Cheng
  */
 public class ConnectionManager extends Thread{
-    private static final Logger LOG = LoggerFactory.getLogger(EchoClient2.class);
+    //private static final Logger LOG = LoggerFactory.getLogger(EchoClient2.class);
     private static final String MSG_HEARTBEAT = "HBeat77";
     // initialize socket and input output streams  
     private DataInputStream  input   = null; 
@@ -98,7 +98,8 @@ public class ConnectionManager extends Thread{
                 return true;
             }
         } catch (IOException e) {
-            LOG.debug("Error when initializing connection", e);
+            System.out.println("Error when initializing connection"+ e);
+            //LOG.debug("Error when initializing connection", e);
         }
         return false;
     }
@@ -109,7 +110,8 @@ public class ConnectionManager extends Thread{
             //out.close();
             clientSocket.close();
         } catch (IOException e) {
-            LOG.debug("error when closing", e);
+            System.out.println("error when closing"+ e);
+            //LOG.debug("error when closing", e);
         }
     }
 }

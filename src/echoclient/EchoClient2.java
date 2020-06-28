@@ -5,8 +5,8 @@
  */
 package echoclient;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
 
 import java.io.*;
 import java.net.*;
@@ -17,7 +17,7 @@ import java.util.logging.Level;
  * @author Wei Cheng
  */
 public class EchoClient2 {
-    private static final Logger LOG = LoggerFactory.getLogger(EchoClient2.class);
+    //private static final Logger LOG = LoggerFactory.getLogger(EchoClient2.class);
     private static final String MSG_HEARTBEAT = "HBeat77";
     
     // initialize socket and input output streams  
@@ -120,7 +120,8 @@ public class EchoClient2 {
                 return true;
             }
         } catch (IOException e) {
-            LOG.debug("Error when initializing connection", e);
+            System.out.println("Error when initializing connection"+e);
+            //LOG.debug("Error when initializing connection", e);
         }
         return false;
     }
@@ -146,7 +147,8 @@ public class EchoClient2 {
             clientSocket.close();
             System.out.println("disconnected: isClosed: "+clientSocket.isClosed());
         } catch (IOException e) {
-            LOG.debug("error when closing", e);
+            System.out.println("error when closing"+ e);
+            //LOG.debug("error when closing", e);
         }
     }
     
@@ -155,7 +157,8 @@ public class EchoClient2 {
             in.close();
             out.close();
         } catch (IOException e) {
-            LOG.debug("error when closing", e);
+            System.out.println("error when closing"+ e);
+            //LOG.debug("error when closing", e);
         }
     }
     
